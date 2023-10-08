@@ -30,7 +30,8 @@
 
 <script>
 import Message from './Message.vue'
-import {ref} from 'vue'
+import {reactive, ref} from 'vue'
+import openai from '../helpers/useOpenAi'
 
 export default {
     components: {
@@ -38,17 +39,50 @@ export default {
     },
     setup() {
         const message = ref(null)
-        const messages = ref([])
+        const messages =  reactive([])
 
         const userInput = () => {
-            messages.value.push({
+            messages.push({
                 role: 'user',
                 content: message.value
             })
             message.value = null
+            chat(messages)
         }
 
-        
+        const chat = async (msgs) => {
+            const chatCompletion = await openai.chat.completions.create({
+                messages: msgs,
+                model: 'gpt-3.5-turbo',
+                stream: true
+            })
+
+            // console.log(chatCompletion.choices[0].message)
+            // messages.value.push(chatCompletion.choices[0].message)
+
+            for await (const chunk of chatCompletion) {
+                // console.log(chunk.choices[0].delta.content);
+                // messages.value.push({
+                //     role: 'assistant',
+                //     content: chunk.choices[0].delta.content
+                // })
+
+                if(chunk.choices) {
+
+                    if(messages[messages.length - 1].role === 'assistant') {
+                        messages[messages.length -1].content += chunk.choices[0].delta.content
+                    } else {
+                        messages.push({
+                            role: 'assistant',
+                            content: chunk.choices[0].delta.content
+                        })
+                    }
+
+                }
+
+            }
+
+        }
 
         return {userInput, message, messages}
     },
