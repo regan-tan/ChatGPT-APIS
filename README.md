@@ -1,29 +1,48 @@
-# gpt-ui
+# Connecting to ChatGPT APIs with VueJS and Vuetify
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository contains the code for a tutorial on how to connect to ChatGPT APIs using VueJS and Vuetify. The tutorial provides a step-by-step guide on how to establish a connection and have interactive conversations with AI.
 
-## Recommended IDE Setup
+## Prerequisites
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+To follow along with this tutorial, you'll need the following:
 
-## Customize configuration
+- [Vue.js](https://vuejs.org/) installed on your machine
+- Basic understanding of Vue.js and Vuetify
+- [OpenAI API credentials](https://platform.openai.com/)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Installation
 
-## Project Setup
+1. Clone this repository using the following command: 
+   ```
+   git clone https://github.com/sohrabq/ChatGPT-APIS.git
+   ```
 
-```sh
-npm install
+2. Navigate to the project directory:
+   ```
+   cd ChatGPT-APIS
+   ```
+
+3. Install the project dependencies:
+   ```
+   npm install
+   ```
+
+## Configuration
+
+1. create a `.env` file.
+
+2. Add `VITE_OPENAI_API_KEY` variable with your actual OpenAI API key in the following line:
+   ```
+   VITE_OPENAI_API_KEY={your_openai_api_key_here}
+   ```
+## Run
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
+The project should now be up and running. You can access it by going to `http://localhost:xxxx` in your browser.
 
-### Compile and Minify for Production
+You will see a chat interface where you can have interactive conversations with the ChatGPT model. Type in your message and click send icon to send it. The assistant will respond with a generated text.
 
-```sh
-npm run build
-```
+You can continue the conversation by typing in your next message and clicking send button icon.
+
+Feel free to explore and modify the code as needed. The tutorial provides a basic implementation, but you can extend it to add more features and functionality.
