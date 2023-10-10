@@ -8,7 +8,8 @@ To follow along with this tutorial, you'll need the following:
 
 - [Vue.js](https://vuejs.org/) installed on your machine
 - Basic understanding of Vue.js and Vuetify
-- [OpenAI API credentials](https://platform.openai.com/)
+- [OpenAI API credentials](https://platform.openai.com/
+- [Youtube Tutorial](https://youtu.be/EqvLoC8fjzA?si=B4VNGVNECbbOoWdV)
 
 ## Installation
 
