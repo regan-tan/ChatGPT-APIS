@@ -9,7 +9,6 @@ To follow along with this tutorial, you'll need the following:
 - [Vue.js](https://vuejs.org/) installed on your machine
 - Basic understanding of Vue.js and Vuetify
 - [OpenAI API credentials](https://platform.openai.com/)
-- [Youtube Tutorial](https://youtu.be/EqvLoC8fjzA?si=B4VNGVNECbbOoWdV)
 
 ## Installation
 
@@ -41,9 +40,3 @@ To follow along with this tutorial, you'll need the following:
 npm run dev
 ```
 The project should now be up and running. You can access it by going to `http://localhost:xxxx` in your browser.
-
-You will see a chat interface where you can have interactive conversations with the ChatGPT model. Type in your message and click send icon to send it. The assistant will respond with a generated text.
-
-You can continue the conversation by typing in your next message and clicking send button icon.
-
-Feel free to explore and modify the code as needed. The tutorial provides a basic implementation, but you can extend it to add more features and functionality.
